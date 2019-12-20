@@ -1,11 +1,11 @@
-<div class='container-fluid'>
-  <div class='row ht_vp'>
-    <div class='col-3 col-lg-2 bg-light p-2'>
+<div #refClassToggler class='container-fluid notes_app'>
+  <div class='row flex-nowrap'>
+    <div id='sidebar_wrapper' class='col-6 col-md-3 col-lg-2 p-2 bg-light'>
       <app-notes-list></app-notes-list>
     </div>
-    <div class='col-9 col-lg-10 px-0'>
+    <div id='content_wrapper' class='col-12 col-md-9 col-lg-10 px-0'>
       <div class='bg-light p-2'>
-        <app-notes-nav></app-notes-nav>
+        <app-notes-nav (toogleSideBar)='toogleSideBar()'></app-notes-nav>
       </div>
       <div class='p-2'>
         <app-notes-editor></app-notes-editor>
