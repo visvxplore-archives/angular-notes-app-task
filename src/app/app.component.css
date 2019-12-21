@@ -41,3 +41,11 @@
   }
 
 }
+
+@media (orientation: portrait) {
+  
+  .active_sidebar > div {
+    overflow: hidden;
+  }
+
+}

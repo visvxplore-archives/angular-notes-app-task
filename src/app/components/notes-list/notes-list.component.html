@@ -1,1 +1,6 @@
-<p>notes-list</p>
+<div class='notes_list'>
+  <div class='border-bottom' *ngFor='let note of notesList | async'>
+    <h6 class='font-weight-bold'>{{note.title ? note.title : 'New Note'}}</h6>
+    <p>{{note.description ? note.description : 'No additional Text Provided'}}</p>
+  </div>
+</div>

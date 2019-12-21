@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgRedux, select } from '@angular-redux/store';
+import { INotesList } from 'src/app/store';
 
 @Component({
   selector: 'app-notes-list',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesListComponent implements OnInit {
 
-  constructor() { }
+  @select('notes') notesList;
+
+  constructor(private ngRedux: NgRedux<INotesList>) { }
 
   ngOnInit() {
   }
