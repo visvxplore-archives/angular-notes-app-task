@@ -18,6 +18,10 @@
   margin-left: 0;
 }
 
+.editor_height {
+  min-height: calc(100% - 46px);
+}
+
 @media (min-width: 768px) {
 
   #sidebar_wrapper {

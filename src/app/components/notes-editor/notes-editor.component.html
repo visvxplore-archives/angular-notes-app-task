@@ -1,3 +1,11 @@
-<p>
-notes-editor works!
-</p>
+<div class='container my-3' *ngIf='editorNote'>
+  <label for='title'>Title</label>
+  <input name='title' type='text' class='form-control' [(ngModel)]='editorNote.title' (keyup)='noteKeysUp()' />
+  <label for='description'>Description</label>
+  <textarea name='description' type='text' class='form-control' [(ngModel)]='editorNote.description'
+  (keyup)='noteKeysUp()'>
+  </textarea>
+</div>
+<div class='container' *ngIf='!editorNote'>
+  <h5 class='text-center my-3'>Select a Note to edit</h5>
+</div>

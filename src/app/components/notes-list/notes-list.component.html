@@ -1,6 +1,13 @@
 <div class='notes_list'>
-  <div class='border-bottom' *ngFor='let note of notesList | async'>
-    <h6 class='font-weight-bold'>{{note.title ? note.title : 'New Note'}}</h6>
-    <p>{{note.description ? note.description : 'No additional Text Provided'}}</p>
+  <div [attr.id]='note.id' class='border-bottom p-1' *ngFor='let note of notesList | async'
+    [ngClass]="{'bg-warning': activeNote?.id == note.id}" (click)='editNote(note)'>
+    <h6 class='font-weight-bold'>
+      {{note.title | slice:0:30}}
+      <span *ngIf='!note.title'>New Note</span>
+    </h6>
+    <p class='mb-1'>
+      {{note.description | slice:0:30}}
+      <span *ngIf='!note.description'>No additional Text Provided</span>
+    </p>
   </div>
 </div>
